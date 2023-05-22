@@ -10,14 +10,30 @@ public class LinkListDemo {
 		list.insertFirst(2, 33.2);
 		list.insertFirst(14, 6.9);
 		list.insertFirst(110, 1.1);
-		
+
+		// вывод списка
 		list.displayList();
-		
-		list.deleteFirst();
-		
-		System.out.println("=====");
-		
-		list.displayList();
+
+		// поиск
+		Link elem = list.find(110);
+		if (elem == null){
+			System.out.println("No such element in the list");
+		}else {
+			System.out.print("Bingo: ");
+			elem.displayLink();
+		}
+
+		System.out.println("===========");
+
+		// удаление
+		Link deleted = list.delete(110);
+		if (deleted == null){
+			System.out.println("Can't delete");
+		}else {
+			System.out.print("Remove success: " );
+			deleted.displayLink();
+		}
+
 
 	}
 
